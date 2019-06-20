@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Template • TodoMVC</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/index.css">
+	<!-- CSS overrides - remove if you don't need it -->
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<section class="todoapp" id="app">
+	<header class="header">
+		<h1>xiaoxin</h1>
+		<input class="new-todo" placeholder="What needs to be done?" v-model="name" autofocus
+			   @keydown.enter="handleTodosAdd">
+	</header>
+	<!-- This section should be hidden by default and shown when there are todos -->
+	<template v-if="todos.length">
+		<section class="main">
+			<input id="toggle-all" class="toggle-all" type="checkbox"
+				   v-model="toggleAllState">
+			<label for="toggle-all">Mark all as complete</label>
+			<ul class="todo-list">
+				<!-- These are here just to show the structure of the list items -->
+				<!-- List items should get the class `editing` when editing and `completed` when marked as completed -->
+				<li :class="{completed:item.done, editing:currentEditing ==item }" v-for="(item,index) in filterTodos"
+					@dblclick="handleEditTodos(item)">
+					<div class="view">
+						<input class="toggle" type="checkbox" v-model="item.done">
+						<label>{{ item.name }}</label>
+						<button class="destroy" @click="handleTodosRemoveClick(index)"></button>
+					</div>
+					<input class="edit" :value="item.name" @keydown.enter="handleSaveEdit(item,index,$event)"
+						   @keydown.esc="handleEscEdit" @blur="handleSaveEdit(item,index,$event)">
+				</li>
+
+			</ul>
+		</section>
+		<!-- This footer should hidden by default and shown when there are todos -->
+		<footer class="footer">
+			<!-- This should be `0 items left` by default -->
+			<span class="todo-count"><strong>{{ filterTodos.length }}</strong> item left</span>
+			<!-- Remove this if you don't implement routing -->
+			<ul class="filters">
+				<li>
+					<a :class="{selected:filterText ==''}" href="#/">All</a>
+				</li>
+				<li>
+					<a href="#/active" :class="{selected:filterText =='active'}">Active</a>
+				</li>
+				<li>
+					<a href="#/completed" :class="{selected:filterText =='completed'}">Completed</a>
+				</li>
+			</ul>
+			<!-- Hidden if no completed items are left ↓ -->
+			<button class="clear-completed" v-if="hiddeCompuleted" @click="handleClearClick">Clear
+				completed
+			</button>
+		</footer>
+	</template>
+</section>
+<footer class="info">
+	<p>Double-click to edit a todo</p>
+	<!-- Remove the below line ↓ -->
+	<p>Template by <a href="#">Sindre Sorhus</a></p>
+	<!-- Change this out with your name and url ↓ -->
+	<p>Created by <a href="#">you</a></p>
+	<p>Part of <a href="#">TodoMVC</a></p>
+</footer>
+<!-- Scripts here. Don't remove ↓ -->
+<script src="js/base.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
