@@ -49,8 +49,7 @@
 			todos: {
 				handler: function (val, oldVal) {
 					window.localStorage.setItem('xiaoxinTodos', JSON.stringify(val))
-				}
-				,
+				},
 				deep: true
 			}
 			,
@@ -58,7 +57,7 @@
 		directives:{
 			focus:{
 				inserted(el) {
-					el.focus()
+					el.focus();
 				}
 			},
 			efocus:{
