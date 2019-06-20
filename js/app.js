@@ -54,6 +54,20 @@
 				deep: true
 			}
 			,
+		},
+		directives:{
+			focus:{
+				inserted(el) {
+					el.focus()
+				}
+			},
+			efocus:{
+				update(el, binding) {
+					if(binding.value){
+						el.focus();
+					}
+				}
+			}
 		}
 		,
 		methods: {
