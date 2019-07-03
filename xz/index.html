@@ -6,15 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .box {
+        .box,.box-t {
             width: 200px;
             height: 200px;
-            margin: 80px auto;
-        }
-        .box-img{
+            margin: 80px ;
+            float: left;
             position: relative;
         }
-        .box-img,.box-img img{
+
+        .box-img,.box-img-t{
+            position: relative;
+        }
+        .box-img,.box-img img,.box-img-t,.box-img-t img{
             width: 100%;
             height: 100%;
             border-radius: 50%;
@@ -35,6 +38,43 @@
         .box:hover .box-img::after{
             transform: rotate(180deg);
         }
+        /*效果2*/
+        .box-img-t::after{
+            content: '';
+            width: 200px;
+            height: 200px;
+            display: block;
+            position: absolute;
+            top:0;
+            left: 0;
+            border-radius: 50%;
+            box-shadow: 0 0 0 10px rgba(255,255,255,.4) inset;
+        
+        }
+        .box-img-t{
+            transition: all 1s;
+        }
+        .text-t{
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0,0,0,.4);
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top:0;
+            transform: translateX(-120%);
+            opacity: 0;
+            transition: all 1s;
+            pointer-events: none;
+        }
+        .box-t:hover .text-t{
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .box-t:hover .box-img-t{
+            transform: rotate(180deg);
+        }
+
     </style>
 </head>
 <body>
@@ -42,6 +82,13 @@
         <div class="box-img">
             <img src="./xiaoxin1.jpg" alt="">
         </div>
+    </div>
+
+    <div class="box-t">
+        <div class="box-img-t">
+            <img src="./xiaoxin1.jpg" alt="">
+        </div>
+        <div class="text-t"></div>
     </div>
     
 </body>
