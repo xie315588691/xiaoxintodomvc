@@ -10,7 +10,6 @@
 </head>
 <body>
 <div class="main">
-    <div class="box">
         <header class="page-top">
             <div class="page-dao" id="pageDao"><a href="#">签到</a></div>
             <a href="#" class="page-top-setting"></a>
@@ -59,24 +58,7 @@
                     <p>我的</p></a></li>
             </ul>
         </footer>
-    </div>
-    <div class="leftMenu">
-        <div class="page-dao" id="close"><a href="#">关闭</a></div>
-
-    </div>
+   
 </div>
-<script>
-    var dao = document.getElementById('pageDao')
-    var close = document.getElementById('close')
-    var main = document.getElementsByClassName('main')[0]
-    dao.onclick = function () {
-        main.className = 'main open'
-
-    }
-    close.onclick=function () {
-        main.className = 'main'
-    }
-
-</script>
 </body>
 </html>
