@@ -282,12 +282,10 @@ footer {
     top: 0;
     left: 0;
     transition: all 2s;
-    display: none;
 
 }
 
 .open .leftMenu {
-    display: block;
     transform: translateX(0);
 }
 
