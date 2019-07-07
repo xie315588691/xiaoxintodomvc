@@ -1,64 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>个人中心</title>
-    <link href="./lib/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/index.css">
-    <script src="./js/mobile-util.js"></script>
+  <meta charset="UTF-8">
+  <title>个人中心</title>
+  <link href="./lib/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--    <script src="./js/mobile-util.js"></script>-->
+  <script>
+    (function setSize() {
+      // alert(document.documentElement.clientWidth / 16)
+      var _html = document.getElementsByTagName('html')[0];
+      var ch = document.documentElement.clientWidth;
+
+      ch > 750 ? _html.style.fontSize = '100px' : _html.style.fontSize = ch * 10 / 75 + 'px';
+      window.onresize = setSize;
+    })();
+  </script>
 </head>
 <body>
 <div class="main">
-        <header class="page-top">
-            <div class="page-dao" id="pageDao"><a href="#">签到</a></div>
-            <a href="#" class="page-top-setting"></a>
+  <header class="page-top">
+    <div class="page-dao" id="pageDao"><a href="#">签到</a></div>
+    <a href="#" class="page-top-setting"></a>
 
-            <div class="page-top-img1"><img src="./image/5.png" alt=""></div>
-            <div class="page-top-img2"><img src="./image/4.png" alt=""></div>
-            <div class="page-top-img3"><img src="./image/3.png" alt=""></div>
-        </header>
-        <div class="page-info">
-            <div class="page-info-msg">
-                <p>谢小新</p>
-                <img src="./image/20.png" alt="">
-            </div>
-            <ul class="page-info-menu">
-                <li><a href="#"><i></i>
-                    <p>会员状态</p></a></li>
-                <li><a href="#"><i></i>
-                    <p>流量查询</p></a></li>
-                <li><a href="#"><i></i>
-                    <p>会员中心</p></a></li>
-                <li><a href="#"><i></i>
-                    <p>收藏记录</p></a></li>
-            </ul>
-        </div>
-        <div class="page-items">
-            <ul>
-                <li><a href="#"><i></i>余额明细</a><a href="#" class="arrow"></a></li>
-                <li><a href="#"><i></i>下载地址</a><a href="#" class="arrow"></a></li>
-                <li><a href="#"><i></i>分享客户端</a><a href="#" class="arrow"></a></li>
-                <li><a href="#"><i></i>常见文件</a><a href="#" class="arrow"></a></li>
-                <li><a href="#"><i></i>设置</a><a href="#" class="arrow"></a></li>
-                <li><a href="#"><i></i>意见反馈</a><a href="#" class="arrow"></a></li>
-            </ul>
-        </div>
-        <footer>
-            <ul class="foot">
-                <li><a href="#"><i class="fa fa-home"></i>
-                    <p>首页</p></a></li>
-                <li><a href="#"><i class="fa fa-free-code-camp"></i>
-                    <p>热点</p></a></li>
-                <li><a href="#"><i class="fa fa-television"></i>
-                    <p>直播</p></a></li>
-                <li><a href="#"><i class="fa fa-compass"></i>
-                    <p>发现</p></a></li>
-                <li><a href="#" class="active"><i class="fa fa-user-o"></i>
-                    <p>我的</p></a></li>
-            </ul>
-        </footer>
-   
+    <div class="page-top-img1"><img src="./image/5.png" alt=""></div>
+    <div class="page-top-img2"><img src="./image/4.png" alt=""></div>
+    <div class="page-top-img3"><img src="./image/3.png" alt=""></div>
+  </header>
+  <div class="page-info">
+    <div class="page-info-msg">
+      <p>谢小新</p>
+      <img src="./image/20.png" alt="">
+    </div>
+    <ul class="page-info-menu">
+      <li><a href="#"><i></i>
+        <p>会员状态</p></a></li>
+      <li><a href="#"><i></i>
+        <p>流量查询</p></a></li>
+      <li><a href="#"><i></i>
+        <p>会员中心</p></a></li>
+      <li><a href="#"><i></i>
+        <p>收藏记录</p></a></li>
+    </ul>
+  </div>
+  <div class="page-items">
+    <ul>
+      <li><a href="#"><i></i>余额明细</a><a href="#" class="arrow"></a></li>
+      <li><a href="#"><i></i>下载地址</a><a href="#" class="arrow"></a></li>
+      <li><a href="#"><i></i>分享客户端</a><a href="#" class="arrow"></a></li>
+      <li><a href="#"><i></i>常见文件</a><a href="#" class="arrow"></a></li>
+      <li><a href="#"><i></i>设置</a><a href="#" class="arrow"></a></li>
+      <li><a href="#"><i></i>意见反馈</a><a href="#" class="arrow"></a></li>
+    </ul>
+  </div>
+  <footer>
+    <ul class="foot">
+      <li><a href="#"><i class="fa fa-home"></i>
+        <p>首页</p></a></li>
+      <li><a href="#"><i class="fa fa-free-code-camp"></i>
+        <p>热点</p></a></li>
+      <li><a href="#"><i class="fa fa-television"></i>
+        <p>直播</p></a></li>
+      <li><a href="#"><i class="fa fa-compass"></i>
+        <p>发现</p></a></li>
+      <li><a href="#" class="active"><i class="fa fa-user-o"></i>
+        <p>我的</p></a></li>
+    </ul>
+  </footer>
+
 </div>
 </body>
 </html>
